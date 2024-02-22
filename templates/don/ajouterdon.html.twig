@@ -1,0 +1,111 @@
+{% extends 'base-front.html.twig' %}
+
+{% block body %}
+<style>
+    
+    body {
+        background-color: #6c757d;
+    }
+
+    /* Espace entre les éléments */
+    .spacer {
+        height: 30px;
+    }
+
+    /* Styling pour la carte */
+    .card {
+        border: none; /* Retirer la bordure par défaut */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajouter une ombre douce */
+        border-radius: 10px; /* Coins arrondis */
+    }
+
+    .card-body {
+        padding: 30px; /* Espacement intérieur */
+    }
+
+    /* Style pour le titre de la carte */
+    .card-title {
+        color: #333; /* Couleur du texte */
+        font-size: 24px; /* Taille de police */
+    }
+
+    /* Style pour les boutons */
+    .btn-primary {
+        background-color: #007bff; /* Couleur de fond */
+        border-color: #007bff; /* Couleur de la bordure */
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3; /* Couleur de fond au survol */
+        border-color: #0056b3; /* Couleur de la bordure au survol */
+    }
+
+    /* Style pour l'image */
+    .rounded-image {
+        border-radius: 20px; /* Coins arrondis */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajouter une ombre douce */
+    }
+
+</style>
+
+<div class="spacer"></div>
+
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    {{ form_start(f, {'attr': {'novalidate': 'novalidate', 'class': 'w-100'}}) }}
+
+                    <h1 class="card-title text-center mb-4">Ajouter un Don</h1>
+
+                    <!-- Champs de formulaire -->
+                    <div class="mb-3">
+                        {{ form_widget(f.nom, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(f.nom) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_widget(f.prenom, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(f.prenom) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_widget(f.idUtilisateur, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(f.idUtilisateur) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_widget(f.date, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(f.date) }}
+                    </div>
+                    
+                    <div class="mb-3">
+                        {{ form_widget(f.email, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(f.email) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_widget(f.idAssociation, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(f.idAssociation) }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form_widget(f.type, {'attr': {'class': 'form-control text-center'}}) }}
+                    </div>
+
+
+                    <div class="mb-3">
+                        {{ form_widget(f.Confirmer, {'attr': {'class': 'btn btn-primary w-100'}}) }}
+                    </div>
+
+                    
+
+                    {{ form_end(f) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <img class="img-fluid rounded-image" src="images/donate.jpg" alt="Donate Image">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

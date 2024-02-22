@@ -1,0 +1,49 @@
+{% extends 'base-back.html.twig' %}
+
+{% block body %}
+<style>
+.card {
+    width: 70%;
+    margin: 20px auto;
+    padding: 10px;
+}
+.card-header,
+.card-body,
+.card-footer {
+    padding: 5px;
+}
+
+.list-group-item {
+    font-size: 0.8rem;
+    width: 80%;
+}
+
+    
+
+</style>
+<div class="container mt-5">
+    <div class="card border-primary">
+        <div class="card-header bg-primary text-white">
+            <h1 class="mb-0">Donnateur</h1>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Nom:</strong> {{ don.nom }}</li>
+                        <li class="list-group-item"><strong>Prénom:</strong> {{ don.prenom }}</li>
+                        <li class="list-group-item"><strong>Email:</strong> {{ don.Email }}</li>
+                        <li class="list-group-item"><strong>Id Utilisateur:</strong> {{ don.IdUtilisateur }}</li>
+                        <li class="list-group-item"><strong>Date:</strong> {{ don.Date|date('d/m/Y') }}</li>
+                        
+                        <li class="list-group-item"><strong>Type:</strong> {{ don.Type }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer bg-transparent">
+            <a href="{{ path('app_afficherdon') }}" class="btn btn-outline-primary">Retourner</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
